@@ -1,0 +1,42 @@
+#服务端口
+server:
+  port: 8001
+
+#服务名
+spring:
+  application:
+    name: service-edu
+  #环境配置:dev、test、prod
+  profiles:
+    active: dev
+
+  #数据源配置
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud_guli?serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    hikari:
+      connection-test-query: SELECT 1
+      connection-timeout: 60000
+      idle-timeout: 500000
+      max-lifetime: 540000
+      maximum-pool-size: 12
+      minimum-idle: 10
+      pool-name: GuliHikariPool
+  #统一返回的json时间格式配置  因为默认情况下的json时间格式带有时区，并且是世界标准时间(格林尼治时间，和北京时间相差八个小时)
+  #默认的json时间格式  "gmtCreate":"2019-10-30T06:18:46.000+0000" 不符合我们的习惯，所以直接进行格式化配置
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+#mybatis-plus日志输出方式(这里用标准日志输出)
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+
+
+
