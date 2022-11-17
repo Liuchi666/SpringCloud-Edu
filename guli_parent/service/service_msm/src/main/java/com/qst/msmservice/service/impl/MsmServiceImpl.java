@@ -40,7 +40,7 @@ public class MsmServiceImpl implements MsmService {
              * CAM密匙查询: https://console.cloud.tencent.com/cam/capi*/
             /**  密钥 */
             Credential cred =
-                    new Credential("AKIDb7UhjbKsGXd7OUPDqKdjdPzNJ4f4zkLk", "DJJCtPwLYa7Xu8A1jLm4DF6lHpHblohP");
+                    new Credential("XXX", "XXX");
 
             // 实例化一个http选项，可选，没有特殊需求可以跳过
             HttpProfile httpProfile = new HttpProfile();
